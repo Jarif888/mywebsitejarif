@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- =====================================================================
+     STUDENT INFORMATION — EDIT THIS SECTION
+     Search this file for "EDIT:" to find everything you can change.
+     1. <title>, description and social tags just below (name, URL)
+     2. HERO     -> name, title, intro, location, links
+     3. ABOUT, EDUCATION, SKILLS, PROJECTS, RESUME, CAREER GOALS
+     4. CONTACT  -> your email address (also in the small script at the bottom)
+     5. Social links: leave href="" empty to hide that icon automatically.
+     Files (all optional, the site still works without them):
+        assets/profile.jpg   assets/project-1.jpg ... assets/resume.pdf
+     ===================================================================== -->
+
+<!-- EDIT: title, description, URL -->
+<title>Jarif Ahmed | BBA Student, Computer in Business</title>
+<meta name="description" content="Personal portfolio of Jarif Ahmed, a BBA student concentrating in Computer in Business, combining business knowledge with technology.">
+<meta name="author" content="Jarif Ahmed">
+<link rel="canonical" href="[your-username.github.io](https://YOUR-USERNAME.github.io/)">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Jarif Ahmed | BBA Student, Computer in Business">
+<meta property="og:description" content="Business knowledge meets technology. Projects, education, skills and career goals.">
+<meta property="og:url" content="[your-username.github.io](https://YOUR-USERNAME.github.io/)">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Jarif Ahmed | BBA Student, Computer in Business">
+<meta name="twitter:description" content="Personal portfolio of a BBA student combining business and technology.">
+<meta name="theme-color" content="#0f2a4a">
+
+<!-- Icons (Font Awesome free CDN). The site still works if it fails to load. -->
+<link rel="stylesheet" href="[cdnjs.cloudflare.com](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css)" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+<style>
+/* ========================= 1. THEME VARIABLES ========================= */
+:root{
+  --bg:#f6f8fb; --surface:#ffffff; --surface-2:#eef2f8;
+  --text:#14202e; --muted:#4a5a6e; --border:#dbe3ee;
+  --primary:#0f3d73; --primary-ink:#ffffff; --accent:#0e7c86;
+  --shadow:0 4px 18px rgba(15,42,74,.08);
+  --radius:16px; --maxw:1120px;
+}
+[data-theme="dark"]{
+  --bg:#0b1320; --surface:#121c2d; --surface-2:#18253a;
+  --text:#e8eef7; --muted:#a6b4c8; --border:#243349;
+  --primary:#7db4ff; --primary-ink:#08121f; --accent:#4fd1c5;
+  --shadow:0 4px 18px rgba(0,0,0,.35);
+}
+
+/* ========================= 2. BASE ========================= */
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:var(--bg);color:var(--text);line-height:1.65;transition:background .3s,color .3s}
+img{max-width:100%;display:block}
+a{color:var(--primary)}
+h1,h2,h3{line-height:1.2;margin:0 0 .6rem}
+h2{font-size:clamp(1.6rem,3vw,2.1rem)}
+p{margin:0 0 1rem}
+.container{width:min(var(--maxw),92%);margin-inline:auto}
+section{padding:84px 0}
+section:nth-of-type(even){background:var(--surface-2)}
+.eyebrow{color:var(--accent);font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:.8rem;margin-bottom:.4rem}
+.lead{color:var(--muted);max-width:680px}
+.section-head{margin-bottom:2.2rem}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:6px}
+.skip{position:absolute;left:-999px;top:8px;background:var(--primary);color:var(--primary-ink);padding:8px 14px;border-radius:8px;z-index:200}
+.skip:focus{left:8px}
+
+/* ========================= 3. BUTTONS & CARDS ========================= */
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.8rem 1.4rem;border-radius:999px;font-weight:600;
+  text-decoration:none;border:2px solid var(--primary);cursor:pointer;font-size:1rem;font-family:inherit;
+  transition:transform .2s,box-shadow .2s,background .2s}
+.btn-primary{background:var(--primary);color:var(--primary-ink)}
+.btn-outline{background:transparent;color:var(--primary)}
+.btn:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.6rem;box-shadow:var(--shadow);
+  transition:transform .25s,box-shadow .25s}
+.card:hover{transform:translateY(-4px)}
+.grid{display:grid;gap:1.4rem}
+.grid-2{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.grid-3{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.tags{display:flex;flex-wrap:wrap;gap:.45rem;padding:0;margin:.8rem 0 0;list-style:none}
+.tags li{background:var(--surface-2);border:1px solid var(--border);color:var(--text);padding:.25rem .75rem;border-radius:999px;font-size:.85rem}
+section:nth-of-type(even) .tags li{background:var(--bg)}
+.placeholder{color:var(--muted);font-style:italic}
+
+/* ========================= 4. NAVIGATION ========================= */
+header{position:sticky;top:0;z-index:100;background:color-mix(in srgb,var(--bg) 88%,transparent);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.brand{font-weight:800;text-decoration:none;color:var(--text);font-size:1.1rem}
+.brand span{color:var(--accent)}
+.nav-links{display:flex;gap:.3rem;list-style:none;margin:0;padding:0}
+.nav-links a{display:block;padding:.45rem .8rem;border-radius:8px;text-decoration:none;color:var(--muted);font-weight:600;font-size:.95rem}
+.nav-links a:hover,.nav-links a.active{color:var(--primary);background:var(--surface-2)}
+.nav-tools{display:flex;gap:.5rem;align-items:center}
+.icon-btn{width:42px;height:42px;border-radius:50%;border:1px solid var(--border);background:var(--surface);color:var(--text);cursor:pointer;font-size:1rem}
+.icon-btn:hover{background:var(--surface-2)}
+#menuBtn{display:none}
+@media(max-width:900px){
+  #menuBtn{display:inline-block}
+  .nav-links{position:absolute;top:68px;left:0;right:0;flex-direction:column;background:var(--surface);
+    border-bottom:1px solid var(--border);padding:.8rem 4%;display:none}
+  .nav-links.open{display:flex}
+}
+
+/* ========================= 5. HERO ========================= */
+.hero{padding:70px 0 90px;background:
+  radial-gradient(900px 400px at 85% -10%,color-mix(in srgb,var(--accent) 16%,transparent),transparent),
+  radial-gradient(700px 400px at 0% 0%,color-mix(in srgb,var(--primary) 14%,transparent),transparent),var(--bg)}
+.hero-inner{display:grid;grid-template-columns:1.3fr .8fr;gap:3rem;align-items:center}
+.hero h1{font-size:clamp(2.2rem,5vw,3.6rem);letter-spacing:-.02em}
+.hero .role{font-size:1.15rem;color:var(--accent);font-weight:700;margin-bottom:1rem}
+.hero-actions{display:flex;flex-wrap:wrap;gap:.8rem;margin:1.6rem 0}
+.meta{display:flex;flex-wrap:wrap;gap:1.2rem;color:var(--muted);font-size:.95rem;margin:0 0 1rem;padding:0;list-style:none}
+.meta i{color:var(--accent);margin-right:.4rem}
+.socials{display:flex;gap:.6rem;flex-wrap:wrap;padding:0;margin:0;list-style:none}
+.socials a{display:grid;place-items:center;width:42px;height:42px;border-radius:50%;border:1px solid var(--border);
+  background:var(--surface);color:var(--text);text-decoration:none;transition:transform .2s,color .2s}
+.socials a:hover{transform:translateY(-3px);color:var(--accent)}
+.photo-wrap{position:relative;width:min(340px,80%);aspect-ratio:1;margin-inline:auto}
+.photo-wrap::before{content:"";position:absolute;inset:-12px;border-radius:50%;border:2px dashed var(--border)}
+.photo{width:100%;height:100%;border-radius:50%;object-fit:cover;border:6px solid var(--surface);box-shadow:var(--shadow);background:var(--surface-2)}
+.photo-fallback{display:none;position:absolute;inset:0;border-radius:50%;border:6px solid var(--surface);box-shadow:var(--shadow);
+  background:linear-gradient(135deg,var(--primary),var(--accent));color:#fff;place-items:center;font-size:4rem;font-weight:800}
+.photo-wrap.no-photo .photo{display:none}
+.photo-wrap.no-photo .photo-fallback{display:grid}
+.badge{display:inline-block;font-size:.8rem;border:1px solid var(--border);background:var(--surface);color:var(--muted);padding:.3rem .8rem;border-radius:999px;margin-bottom:1.2rem}
+@media(max-width:820px){.hero-inner{grid-template-columns:1fr;text-align:center}
+  .hero-inner>div:first-child{order:2}.meta,.socials,.hero-actions{justify-content:center}.lead{margin-inline:auto}}
+
+/* ========================= 6. SECTION-SPECIFIC ========================= */
+.edu h3{margin-bottom:.2rem}
+.edu .date{color:var(--accent);font-weight:700;font-size:.9rem}
+details{margin-top:.8rem}
+summary{cursor:pointer;font-weight:600;color:var(--primary)}
+.skill-card h3{display:flex;gap:.6rem;align-items:center;font-size:1.1rem}
+.skill-card h3 i{color:var(--accent)}
+.project-img{aspect-ratio:16/9;border-radius:12px;overflow:hidden;margin-bottom:1rem;background:linear-gradient(135deg,var(--primary),var(--accent));
+  display:grid;place-items:center;color:#fff;font-size:2.2rem;position:relative}
+.project-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.project .links{display:flex;gap:1rem;margin-top:1rem;font-weight:600}
+.project .links a{text-decoration:none}
+.project .links a:hover{text-decoration:underline}
+.project .links .off{color:var(--muted);opacity:.7}
+.resume-box{display:flex;flex-wrap:wrap;gap:2rem;align-items:center;justify-content:space-between}
+.goal-list{list-style:none;padding:0;margin:0;display:grid;gap:1rem}
+.goal-list li{display:flex;gap:1rem}
+.goal-list i{color:var(--accent);margin-top:.35rem}
+form{display:grid;gap:1rem}
+label{font-weight:600;font-size:.95rem}
+input,textarea{width:100%;padding:.8rem 1rem;border-radius:10px;border:1px solid var(--border);background:var(--bg);color:var(--text);font:inherit;margin-top:.3rem}
+textarea{min-height:140px;resize:vertical}
+.note{font-size:.85rem;color:var(--muted)}
+footer{padding:2rem 0;border-top:1px solid var(--border);text-align:center;color:var(--muted);font-size:.9rem}
+
+/* Reveal animation (only active when JS is running) */
+.js .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s,transform .6s}
+.js .reveal.show{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}
+  .js .reveal{opacity:1;transform:none}}
+</style>
+</head>
+
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- ============================ NAVIGATION ============================
+     Items are hidden automatically if their section is removed or has the "hidden" attribute. -->
+<header>
+  <div class="container nav">
+    <a class="brand" href="#home" aria-label="Jarif Ahmed, home">Jarif<span>.</span>Ahmed</a>
+    <nav aria-label="Main navigation">
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#resume">Resume</a></li>
+        <li><a href="#goals">Career Goals</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-tools">
+      <button class="icon-btn" id="themeBtn" aria-label="Switch to dark mode" title="Toggle theme"><i class="fa-solid fa-moon" aria-hidden="true"></i></button>
+      <button class="icon-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks"><i class="fa-solid fa-bars" aria-hidden="true"></i></button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ============================ HOME / HERO ============================ -->
+<section id="home" class="hero" aria-labelledby="hero-title">
+  <div class="container hero-inner">
+    <div>
+      <!-- EDIT: university statement. Keep it clear this is a personal site. -->
+      <span class="badge">Personal Website | Pacific State University</span>
+      <h1 id="hero-title">Hello, I'm Jarif Ahmed</h1>
+      <p class="role">BBA Student | Computer in Business</p>
+      <!-- EDIT: short introduction -->
+      <p class="lead">I'm a motivated business student who combines business concepts with technology. I'm interested in web development, data, marketing, and entrepreneurship, and I'm building skills at the intersection of business and computers.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#projects"><i class="fa-solid fa-folder-open" aria-hidden="true"></i> View My Work</a>
+        <a class="btn btn-outline" href="#contact"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Contact Me</a>
+      </div>
+      <ul class="meta">
+        <!-- EDIT: location and email -->
+        <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i>[CITY, STATE]</li>
+        <li><i class="fa-solid fa-envelope" aria-hidden="true"></i><a href="mailto:your.email@example.com" data-email>your.email@example.com</a></li>
+      </ul>
+      <!-- EDIT: social links. Leave href="" to hide an icon. Fill in the full URL to show it. -->
+      <ul class="socials" aria-label="Social links">
+        <li><a href="" data-social aria-label="LinkedIn" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a></li>
+        <li><a href="" data-social aria-label="GitHub" target="_blank" rel="noopener"><i class="fa-brands fa-github" aria-hidden="true"></i></a></li>
+        <li><a href="" data-social aria-label="Personal portfolio" target="_blank" rel="noopener"><i class="fa-solid fa-globe" aria-hidden="true"></i></a></li>
+        <li><a href="" data-social aria-label="X / Twitter" target="_blank" rel="noopener"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a></li>
+      </ul>
+    </div>
+    <!-- EDIT: put your photo at assets/profile.jpg (square works best). Initials show if missing. -->
+    <div class="photo-wrap" id="photoWrap">
+      <img class="photo" src="assets/profile.jpg" alt="Portrait of Jarif Ahmed" width="340" height="340" onerror="this.parentElement.classList.add('no-photo')">
+      <div class="photo-fallback" aria-hidden="true">JA</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ ABOUT ============================ -->
+<section id="about" aria-labelledby="about-title">
+  <div class="container">
+    <div class="section-head reveal"><p class="eyebrow">About Me</p><h2 id="about-title">Where business meets technology</h2></div>
+    <div class="grid grid-2">
+      <!-- EDIT: bio -->
+      <article class="card reveal">
+        <h3>Who I am</h3>
+        <p>I'm a Bachelor of Business Administration (BBA) student at Pacific State University, concentrating in Computer in Business. My studies are helping me build knowledge in both business and technology.</p>
+        <p>I enjoy exploring how technology can solve business problems and create new opportunities.</p>
+      </article>
+      <!-- EDIT: academic journey -->
+      <article class="card reveal">
+        <h3>Academic journey</h3>
+        <p>My coursework covers business, marketing, sociology, calculus, computer technology, and data-related subjects. <span class="placeholder">[Add a sentence about what you've enjoyed most or learned so far.]</span></p>
+      </article>
+      <!-- EDIT: interests -->
+      <article class="card reveal">
+        <h3>Interests</h3>
+        <ul class="tags">
+          <li>Business</li><li>Technology</li><li>Computers</li><li>Web development</li><li>Data</li><li>Marketing</li><li>Entrepreneurship</li>
+        </ul>
+        <p class="placeholder" style="margin-top:1rem">[Add personal interests or hobbies if you like.]</p>
+      </article>
+      <!-- EDIT: professional development -->
+      <article class="card reveal">
+        <h3>Professional development</h3>
+        <p>I'm continuing to build technical, analytical, communication, and leadership skills. <span class="placeholder">[Add clubs, workshops, or courses you take part in.]</span></p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ EDUCATION ============================ -->
+<section id="education" aria-labelledby="edu-title">
+  <div class="container">
+    <div class="section-head reveal"><p class="eyebrow">Education</p><h2 id="edu-title">Academic background</h2></div>
+    <!-- EDIT: copy this whole <article> block to add another school or degree -->
+    <article class="card edu reveal">
+      <p class="date">[START YEAR] – [EXPECTED GRADUATION YEAR]</p>
+      <h3>Bachelor of Business Administration (BBA)</h3>
+      <p>Pacific State University</p>
+      <p><strong>Concentration:</strong> Computer in Business</p>
+      <p class="placeholder">GPA (optional): [add only if you want to show it]</p>
+      <details open>
+        <summary>Relevant coursework</summary>
+        <!-- EDIT: replace with your actual course names -->
+        <ul class="tags">
+          <li>Business</li><li>Marketing</li><li>Sociology</li><li>Calculus</li><li>Computer Technology</li><li>Data-related coursework</li>
+        </ul>
+      </details>
+    </article>
+    <!-- END education block -->
+  </div>
+</section>
+
+<!-- ============================ SKILLS ============================
+     No fake percentages. Only keep skills you can discuss in an interview.
+     Replace [bracketed] items with real ones. -->
+<section id="skills" aria-labelledby="skills-title">
+  <div class="container">
+    <div class="section-head reveal"><p class="eyebrow">Skills</p><h2 id="skills-title">What I'm building</h2>
+      <p class="lead">Skills I'm developing through coursework and personal projects.</p></div>
+    <div class="grid grid-3">
+      <article class="card skill-card reveal"><h3><i class="fa-solid fa-briefcase" aria-hidden="true"></i>Business &amp; Management</h3>
+        <ul class="tags"><li>Business fundamentals</li><li>Marketing</li><li>Entrepreneurship</li><li>[Add skill]</li></ul></article>
+      <article class="card skill-card reveal"><h3><i class="fa-solid fa-laptop" aria-hidden="true"></i>Computer &amp; Technology</h3>
+        <ul class="tags"><li>Computer technology</li><li>[Add software/tool]</li><li>[Add skill]</li></ul></article>
+      <article class="card skill-card reveal"><h3><i class="fa-solid fa-code" aria-hidden="true"></i>Web Development</h3>
+        <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>[Add skill]</li></ul></article>
+      <article class="card skill-card reveal"><h3><i class="fa-solid fa-chart-column" aria-hidden="true"></i>Data &amp; Analytics</h3>
+        <ul class="tags"><li>Calculus</li><li>Data coursework</li><li>[Add tool, e.g. Excel]</li></ul></article>
+      <article class="card skill-card reveal"><h3><i class="fa-solid fa-comments" aria-hidden="true"></i>Communication</h3>
+        <ul class="tags"><li>[Add skill]</li><li>[Add skill]</li></ul></article>
+      <article class="card skill-card reveal"><h3><i class="fa-solid fa-lightbulb" aria-hidden="true"></i>Problem Solving</h3>
+        <ul class="tags"><li>[Add skill]</li><li>[Add skill]</li></ul></article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ PROJECTS ============================ -->
+<section id="projects" aria-labelledby="projects-title">
+  <div class="container">
+    <div class="section-head reveal"><p class="eyebrow">Projects</p><h2 id="projects-title">Selected work</h2>
+      <p class="lead">University and personal projects. The cards below are placeholders: replace them with your real work.</p></div>
+    <div class="grid grid-3">
+
+      <!-- ===== PROJECT BLOCK: copy from here to END PROJECT to add another =====
+           EDIT: title, description, tags, links. Image: assets/project-1.jpg (change the number per project).
+           Leave href="" to show the link as "coming soon". -->
+      <article class="card project reveal">
+        <div class="project-img"><i class="fa-solid fa-laptop-code" aria-hidden="true"></i>
+          <img src="assets/project-1.jpg" alt="Screenshot of Personal Portfolio Website project" loading="lazy" onerror="this.remove()"></div>
+        <h3>Personal Portfolio Website</h3>
+        <p>This website: a responsive portfolio built with HTML, CSS, and JavaScript. <span class="placeholder">[Add what you learned.]</span></p>
+        <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+        <div class="links"><a href="" data-link>GitHub</a><a href="" data-link>Live demo</a></div>
+      </article>
+      <!-- END PROJECT -->
+
+      <article class="card project reveal">
+        <div class="project-img"><i class="fa-solid fa-bullhorn" aria-hidden="true"></i>
+          <img src="assets/project-2.jpg" alt="Business and marketing project preview" loading="lazy" onerror="this.remove()"></div>
+        <h3>Business / Marketing Project</h3>
+        <p class="placeholder">[Describe a class or personal business or marketing project, your role, and the result.]</p>
+        <ul class="tags"><li>Marketing</li><li>[Skill used]</li></ul>
+        <div class="links"><a href="" data-link>Project link</a></div>
+      </article>
+
+      <article class="card project reveal">
+        <div class="project-img"><i class="fa-solid fa-globe" aria-hidden="true"></i>
+          <img src="assets/project-3.jpg" alt="Web development project preview" loading="lazy" onerror="this.remove()"></div>
+        <h3>Web Development Project</h3>
+        <p class="placeholder">[Describe a website or web app you built.]</p>
+        <ul class="tags"><li>[Technology]</li><li>[Technology]</li></ul>
+        <div class="links"><a href="" data-link>GitHub</a><a href="" data-link>Live demo</a></div>
+      </article>
+
+      <article class="card project reveal">
+        <div class="project-img"><i class="fa-solid fa-chart-line" aria-hidden="true"></i>
+          <img src="assets/project-4.jpg" alt="Data and technology project preview" loading="lazy" onerror="this.remove()"></div>
+        <h3>Data / Technology Project</h3>
+        <p class="placeholder">[Describe a data analysis or technology project.]</p>
+        <ul class="tags"><li>[Tool]</li><li>[Skill]</li></ul>
+        <div class="links"><a href="" data-link>Project link</a></div>
+      </article>
+
+      <article class="card project reveal">
+        <div class="project-img"><i class="fa-solid fa-book-open" aria-hidden="true"></i>
+          <img src="assets/project-5.jpg" alt="Academic research project preview" loading="lazy" onerror="this.remove()"></div>
+        <h3>Academic Research Project</h3>
+        <p class="placeholder">[Describe a research paper or academic project, if you have one. Delete this card if not.]</p>
+        <ul class="tags"><li>[Topic]</li><li>[Method]</li></ul>
+        <div class="links"><a href="" data-link>Paper / link</a></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ RESUME ============================ -->
+<section id="resume" aria-labelledby="resume-title">
+  <div class="container">
+    <div class="card resume-box reveal">
+      <div>
+        <p class="eyebrow">Resume</p>
+        <h2 id="resume-title">My resume</h2>
+        <p class="lead" style="margin:0">A summary of my education, skills, and experience. <span class="placeholder">[Upload your PDF to assets/resume.pdf]</span></p>
+      </div>
+      <div class="hero-actions" style="margin:0">
+        <!-- EDIT: change the file path if your resume has a different name -->
+        <a class="btn btn-primary" href="assets/resume.pdf" download><i class="fa-solid fa-download" aria-hidden="true"></i> Download Resume</a>
+        <a class="btn btn-outline" href="assets/resume.pdf" target="_blank" rel="noopener"><i class="fa-solid fa-eye" aria-hidden="true"></i> View Resume</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ CAREER GOALS ============================ -->
+<section id="goals" aria-labelledby="goals-title">
+  <div class="container">
+    <div class="section-head reveal"><p class="eyebrow">Career Goals</p><h2 id="goals-title">Where I'm headed</h2></div>
+    <div class="card reveal">
+      <p class="lead">My goal is to build a career at the intersection of business and technology.</p>
+      <ul class="goal-list">
+        <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span>Continue developing technical skills, including web development and data.</span></li>
+        <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span>Strengthen analytical thinking and problem solving.</span></li>
+        <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span>Improve communication and leadership skills.</span></li>
+        <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span class="placeholder">[Add a specific goal, e.g. an industry, role, or internship.]</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ CONTACT ============================ -->
+<section id="contact" aria-labelledby="contact-title">
+  <div class="container">
+    <div class="section-head reveal"><p class="eyebrow">Contact</p><h2 id="contact-title">Interested in connecting?</h2>
+      <p class="lead">Feel free to reach out about internships, employment, projects, or collaboration.</p></div>
+    <div class="grid grid-2">
+      <!--
+        EDIT: Works with no backend. Pressing "Send Message" opens the visitor's email app
+        with the message filled in, addressed to the email set in the script at the bottom.
+        To use a form service later (e.g. Formspree), change the form's action and remove the script.
+      -->
+      <form class="card reveal" id="contactForm" aria-label="Contact form">
+        <div><label for="name">Name</label><input id="name" name="name" type="text" required autocomplete="name"></div>
+        <div><label for="email">Email</label><input id="email" name="email" type="email" required autocomplete="email"></div>
+        <div><label for="message">Message</label><textarea id="message" name="message" required></textarea></div>
+        <button class="btn btn-primary" type="submit"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Send Message</button>
+        <p class="note" id="formNote" role="status">This opens your email app to send the message.</p>
+      </form>
+      <div class="card reveal">
+        <h3>Other ways to reach me</h3>
+        <p><i class="fa-solid fa-envelope" aria-hidden="true"></i> <a href="mailto:your.email@example.com" data-email>your.email@example.com</a></p>
+        <p><i class="fa-solid fa-location-dot" aria-hidden="true"></i> [CITY, STATE]</p>
+        <!-- EDIT: LinkedIn / GitHub. Leave href="" and the line is hidden. -->
+        <p data-social-row><i class="fa-brands fa-linkedin" aria-hidden="true"></i> <a href="" data-social-text target="_blank" rel="noopener">LinkedIn</a></p>
+        <p data-social-row><i class="fa-brands fa-github" aria-hidden="true"></i> <a href="" data-social-text target="_blank" rel="noopener">GitHub</a></p>
+        <p class="note">LinkedIn and GitHub appear here once you add your URLs.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <p>&copy; <span id="year">2026</span> Jarif Ahmed. Personal website of a student at Pacific State University. Not an official university website.</p>
+  </div>
+</footer>
+
+<script>
+/* ======================================================================
+   JAVASCRIPT
+   EDIT: set CONTACT_EMAIL, also update the visible email in the HTML above.
+   ====================================================================== */
+const CONTACT_EMAIL = "your.email@example.com";
+
+document.documentElement.classList.add("js");
+const root = document.documentElement;
+
+/* ---------- Theme: saved choice, else system preference ---------- */
+const themeBtn = document.getElementById("themeBtn");
+function applyTheme(t){
+  root.setAttribute("data-theme", t);
+  const dark = t === "dark";
+  themeBtn.innerHTML = '<i class="fa-solid ' + (dark ? "fa-sun" : "fa-moon") + '" aria-hidden="true"></i>';
+  themeBtn.setAttribute("aria-label", dark ? "Switch to light mode" : "Switch to dark mode");
+}
+let saved = null;
+try { saved = localStorage.getItem("theme"); } catch(e){}
+applyTheme(saved || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"));
+themeBtn.addEventListener("click", () => {
+  const next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+  applyTheme(next);
+  try { localStorage.setItem("theme", next); } catch(e){}
+});
+
+/* ---------- Mobile menu ---------- */
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
+menuBtn.addEventListener("click", () => {
+  const open = navLinks.classList.toggle("open");
+  menuBtn.setAttribute("aria-expanded", open);
+  menuBtn.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+});
+navLinks.addEventListener("click", e => {
+  if (e.target.tagName === "A"){ navLinks.classList.remove("open"); menuBtn.setAttribute("aria-expanded","false"); }
+});
+
+/* ---------- Hide nav items for missing/hidden sections ---------- */
+navLinks.querySelectorAll("a").forEach(a => {
+  const sec = document.querySelector(a.getAttribute("href"));
+  if (!sec || sec.hidden) a.parentElement.remove();
+});
+
+/* ---------- Hide empty social links and project links ---------- */
+document.querySelectorAll("[data-social]").forEach(a => {
+  if (!a.getAttribute("href").trim()) a.parentElement.remove();
+});
+document.querySelectorAll("[data-social-text]").forEach(a => {
+  if (!a.getAttribute("href").trim()) a.closest("[data-social-row]").remove();
+});
+document.querySelectorAll("[data-link]").forEach(a => {
+  if (!a.getAttribute("href").trim()){
+    a.classList.add("off");
+    a.removeAttribute("href");
+    a.setAttribute("aria-disabled","true");
+    a.textContent += " (coming soon)";
+  }
+});
+const socialList = document.querySelector(".socials");
+if (socialList && !socialList.children.length) socialList.remove();
+
+/* ---------- Active nav link on scroll + reveal animation ---------- */
+const links = [...navLinks.querySelectorAll("a")];
+const io = new IntersectionObserver(entries => {
+  entries.forEach(en => {
+    if (en.isIntersecting){
+      links.forEach(l => l.classList.toggle("active", l.getAttribute("href") === "#" + en.target.id));
+    }
+  });
+}, { rootMargin: "-40% 0px -55% 0px" });
+document.querySelectorAll("main section").forEach(s => io.observe(s));
+
+if ("IntersectionObserver" in window){
+  const rv = new IntersectionObserver((es, o) => es.forEach(e => {
+    if (e.isIntersecting){ e.target.classList.add("show"); o.unobserve(e.target); }
+  }), { threshold: .12 });
+  document.querySelectorAll(".reveal").forEach(el => rv.observe(el));
+} else {
+  document.querySelectorAll(".reveal").forEach(el => el.classList.add("show"));
+}
+
+/* ---------- Contact form (mailto, no backend) ---------- */
+document.getElementById("contactForm").addEventListener("submit", e => {
+  e.preventDefault();
+  const f = e.target;
+  const body = f.message.value + "\n\nFrom: " + f.name.value + " (" + f.email.value + ")";
+  window.location.href = "mailto:" + CONTACT_EMAIL +
+    "?subject=" + encodeURIComponent("Portfolio message from " + f.name.value) +
+    "&body=" + encodeURIComponent(body);
+  document.getElementById("formNote").textContent = "Opening your email app...";
+});
+
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
